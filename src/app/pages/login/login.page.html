@@ -1,0 +1,31 @@
+<ion-header>
+</ion-header>
+
+<ion-content color="primary">
+  <div class="ion-text-center">
+    <ion-icon name="person-circle"></ion-icon>
+    <h2>Login</h2>
+  </div>
+  <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">    
+      <ion-item class="rounded-input">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" required formControlName="email"></ion-input>
+      </ion-item> 
+  
+      <ion-item class="rounded-input">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" required formControlName="password"></ion-input>
+      </ion-item>
+  
+        <ion-button expand="block" fill="outline" color="secondary" type="submit" [disabled]="email.invalid || password.invalid">Login</ion-button>
+    </form>
+
+    <div class="ion-text-center">
+      <p>New to Come At Me Bro?</p>
+      <ion-button size="small" color="secondary" fill="outline" shape="round" href="/register">
+        Create Account
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
